@@ -5,16 +5,16 @@ import { ArrowRight } from "lucide-react";
 const Landing = () => {
   return (
     <>
-      <div className="">
-        <div className="flex justify-between items-center bg-[#DDEEFE] h-[60vh] px-16 pt-20  ">
+      <div className="h-[120vh] relative">
+        <div className="flex justify-between items-center bg-[#DDEEFE] h-[60vh] px-16 pt-10 ">
           {/* Left Section - Heading leading tight is the same as line height*/}
           <h1 className="text-5xl font-bold leading-tight w-1/2">
             Ads That Speak, Results That Shine
           </h1>
 
           {/* Right Section - Text & Button */}
-          <div className="w-1/3 text-left">
-            <p className="text-gray-700 mt-5 text-sm leading-tight">
+          <div className="w-[35vw] text-left">
+            <p className="text-gray-700 mt-5 text-m leading-tight text-xl">
               We don’t just create advertisements—we craft compelling messages
               that speak to your audience and drive real engagement.
             </p>
@@ -27,8 +27,12 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="">
-          <img src={Image} alt="Header Section" />
+        <div className="absolute w-full h-80 overflow-hidden ">
+          <img
+            src={Image}
+            alt="Header Section"
+            className="w-fit relative bottom-25 "
+          />
         </div>
       </div>
     </>
