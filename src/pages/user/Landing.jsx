@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "../../assets/Images/Header Section.png";
-import { ArrowRight } from "lucide-react";
+import Image2 from "../../assets/Images/Laptop.png";
+import { ArrowRight, ChartPieIcon, HeartCrackIcon, Send, StarIcon, } from "lucide-react";
+
 
 const Landing = () => {
   return (
@@ -33,6 +35,46 @@ const Landing = () => {
             alt="Header Section"
             className="w-full relative bottom-25 "
           />
+        </div>
+      </div>
+      <div className="flex justify-around items-center bg-[#FFFFFF] h-[100vh] p-20">
+        <div className=" text-left">
+        <img src={Image2} alt="Laptop" className=" h-120" />
+        </div >
+        <div className="w-1/2"> 
+          <h1 className="text-blue-500 text-l font-bold mb-8 hover:text-blue-800">About Us</h1>
+          <h2 className="text-2xl font-extrabold mb-10 "> Elevating Your Style & Beyond</h2>
+          <p className="text-gray-500">  We bring you the best in fashion, accessories, kids' essentials, and exquisite jewelry—all in one place. Our platform is designed to connect buyers and sellers seamlessly, offering a curated selection of high-quality products that match your style and needs.</p>
+          <button className="bg-blue-900 text-white px-6 py-3 flex items-center justify-center gap-2 mt-5 hover:bg-blue-800">Get Started</button>
+        </div>
+      </div>
+      <div className="bg-[#F9FAFB] h-[100vh] p-20">
+        <div className="flex justify-around items-center bg-[#FFFFFF] p-10">
+          <h1 className="text-3xl font-bold leading-tight w-1/2">Bridging Style & Technology for Everyone</h1>
+          <p className="text-gray-700 mt-5 text-m pl-10 text-l w-1/2">Seamless, Accessible, and Engaging. We create digital experiences that cater to everyone. Our platform ensures that fashion, accessories, kids' essentials, and jewelry are showcased in a way that's user-friendly, responsive, and inclusive for all. Elevate your brand with solutions that connect and inspire!</p>
+        </div>
+        <div className="flex justify-around items-center bg-[#FFFFFF] p-10">
+          <div>
+            <span className="text-blue-600"><Send/></span>
+            <h1 className="text-2xl font-bold leading-tight">Branding</h1>
+            <p className="text-gray-700 mt-5 text-m">Create a lasting impression with a brand that speaks to your audience and resonates with your values.</p>
+          </div>
+          <div>
+            <span className="text-blue-600"><StarIcon/></span>
+            <h1 className="text-2xl font-bold leading-tight">Development</h1>
+            <p className="text-gray-700 mt-5 text-m">Make your product more eye-catching with a touch of illustration.</p>
+          </div>
+          <div>
+            <span className="text-blue-600"><ChartPieIcon/></span>
+            <h1 className="text-2xl font-bold leading-tight">Marketing</h1>
+            <p className="text-gray-700 mt-5 text-m">Create a lasting impression with a brand that speaks to your audience and resonates with your values.</p>
+          </div>
+          <div>
+            <span className="text-blue-600"><HeartCrackIcon/></span>
+            <h1 className="text-2xl font-bold leading-tight">Strategy</h1>
+            <p className="text-gray-700 mt-5 text-m">Create a lasting impression with a brand that speaks to your audience and resonates with your values.</p>
+          </div>
+
         </div>
       </div>
     </>
