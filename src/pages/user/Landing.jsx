@@ -27,11 +27,11 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="absolute w-fill h-80 overflow-hidden ">
+        <div className="absolute w-full h-100 overflow-hidden ">
           <img
             src={Image}
             alt="Header Section"
-            className="w-fit relative bottom-25 "
+            className="w-full relative bottom-25 "
           />
         </div>
       </div>
