@@ -11,9 +11,9 @@ const CreateAd = () => {
         </h1>
         <select className="border border-gray-300 p-2 rounded w-full">
           <option value="">Select a category</option>
-          <option value="electronics">Fashion & Accessories</option>
-          <option value="fashion">Beauty Products</option>
-          <option value="real-estate">Kids & Toys</option>
+          <option value="Fashion & Accessories">Fashion & Accessories</option>
+          <option value="Beauty Products">Beauty Products</option>
+          <option value="Kids & Toys">Kids & Toys</option>
         </select>
 
         <input
