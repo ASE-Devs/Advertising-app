@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
 
 const VendorAds = () => {
   return (
-    <div>VendorAds</div>
-  )
-}
+      <div>VendorAds</div>
+  
+  );
+};
 
-export default VendorAds
+export default VendorAds;
