@@ -1,111 +1,77 @@
 import React from "react";
-import Bg from "../../assets/pics/profile.jpg";
+import Image from "../../assets/pics/bg-overview.jpg";
+import proFile from "../../assets/pics/profile.jpg";
 import { Facebook, LucideYoutube, Twitter } from "lucide-react";
 
 const Overview = () => {
   return (
-    <div>
-      <div className="flex items-center flex-col h-80 p-32 bg-[#5575F2] font-semibold">
-        <h1 className="text-2xl">Replace cover image</h1>
-        <div className="flex justify-between gap-6 p-3.5">
-          <button className="hover:text-[#5575F2]">Remove</button>
-          <button className="bg-yellow-100 rounded-2xl p-1.5">
-            Edit Cover
+    <div className="bg-gray-100 h-screen w-full pl-20 pr-10  ">
+      {/* The First Section of the Pag*/}
+      <div
+        className="relative flex flex-col items-center justify-center h-64 bg-cover bg-center text-white"
+        style={{ backgroundImage: `url(${Image})` }}
+      ></div>
+
+      <div className="relative -top-12 mx-auto w-3/4 bg-white shadow-lg rounded-2xl p-6 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <img
+            className="rounded-full w-20 h-20 border-4 border-white shadow-md"
+            src={proFile}
+            alt="Profile"
+          />
+          <div>
+            <h1 className="text-xl font-bold">Customer Name</h1>
+            <p className="text-gray-500">
+              Envision greatness. Embrace innovation!
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <Facebook className="text-gray-500 hover:text-blue-500" />
+          <Twitter className="text-gray-500 hover:text-blue-500" />
+          <LucideYoutube className="text-gray-500 hover:text-blue-500" />
+          <button className="border px-4 py-1 rounded-lg hover:text-blue-500">
+            Edit profile
           </button>
-          <div class="bg-[url(/pics/profile.jpg)] ..."></div>
         </div>
       </div>
 
-      {/* SECOND SECTION */}
+      <div className="w-3/4 mx-auto mt-3 flex justify-between border-b pb-1">
+        <div className="flex gap-6 font-semibold">
+          <button className="text-gray-500 hover:text-blue-500">
+            All Products
+          </button>
+        </div>
+        <select className="border px-2 py-1 rounded">
+          <option>Latest</option>
+          <option>Popular</option>
+        </select>
+      </div>
 
-      <div className=" shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);  rounded-4xl  h-60 pt-6 ml-20 mr-20">
-        <div className=" flex  flex-row gap-15 justify-evenly">
-          <div className="flex flex-row ">
+      {/* Mapping  of items*/}
+      <div className="grid grid-cols-3 gap-6 w-3/4 mx-auto mt-6">
+        {[
+          { title: "Dress", price: " GH₵35.00" },
+          { title: "Dress", price: " GH₵35.00" },
+          { title: "Dress", price: " GH₵35.00" },
+          { title: "Shoe", price: " GH₵200.00" },
+          { title: "Shoe", price: " GH₵200.00" },
+          { title: "Shoe", price: " GH₵200.00" },
+          { title: "Bag", price: " GH₵120.00" },
+          { title: "Bag", price: " GH₵120.00" },
+          { title: "Bag", price: " GH₵120.00" },
+        ].map((product, index) => (
+          <div key={index} className="bg-white shadow-lg p-4 rounded-lg">
             <img
-              className=" border-2 rounded-full w-20 p-3"
-              src="#"
-              alt="profile image"
+              className="w-full h-50 object-cover rounded-md"
+              src={Image}
+              alt={product.title}
             />
-            <span className="p-6">
-              <h1 className="font-extrabold text-2xl">Anthony Kwame</h1>
-              <p className="text-gray-400 font-semibold">
-                Dream Big. Great Sales
-              </p>
-            </span>
+            <h1 className="mt-2 font-semibold">{product.title}</h1>
+            <p className="text-gray-500">{product.price}</p>
           </div>
-
-          <div className="flex flex-row  justify-evenly gap-4 pt-8 ml-56 ">
-            <span>
-              <Facebook />
-            </span>
-
-            <span>
-              <Twitter />
-            </span>
-
-            <span>
-              <LucideYoutube />
-            </span>
-            <div className="-mt-2.5">
-              <button className="p-2 relative border-1 font-semibold  hover:text-blue-400 rounded-full">
-                Edit here
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-
-      <section>
-        <div className="flex flex-row  gap-6 ml-40 mr-40 absolute mt-0 font-extrabold">
-          <h1>Products</h1>
-          <h1>Following</h1>
-          <h1>Products</h1>
-
-          <select className="ml-96">
-            <option value="Latest">Latest</option>
-            <option value="Products">Products</option>
-            <option value="Sales">Sales</option>
-          </select>
-        </div>
-
-        {/* GRID SECTION */}
-
-        <div class="grid grid-cols-3 gap-20 items-center w-60 ml-40 mt-6 absolute m-72 ">
-          <div className="shadow-amber-600 text-amber-200 border-2 w-40">
-            <h1>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta
-            </h1>
-          </div>
-
-          <div className="shadow-amber-600 text-green-500 border-2 w-40 ">
-            <h1>Lorem</h1>
-          </div>
-
-          <div className="shadow-amber-600 text-red-600 border-2 w-40">
-          <h1>
-            Lorem ipsum dolor 
-          </h1>
-        </div>
-
-        <div className="shadow-amber-600 text-amber-200 border-2 w-40">
-            <h1>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta
-            </h1>
-          </div>
-
-          <div className="shadow-amber-600 text-green-500 border-2 w-40">
-            <h1>Lorem</h1>
-          </div>
-
-          <div className="shadow-amber-600 text-red-600 border-2 w-40">
-          <h1>
-            Lorem ipsum dolor 
-          </h1>
-        </div>
-        </div>
-
-        
-      </section>
     </div>
   );
 };
