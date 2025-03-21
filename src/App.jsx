@@ -10,6 +10,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import Overview from "./pages/dashboard/Overview";
 import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
+import About from "./pages/auth/About";
 
 function App() {
   return (
@@ -19,9 +20,12 @@ function App() {
           <Route index={true} element={<Landing />} />
           <Route path="adverts" element={<Adverts />} />
           <Route path="adverts/:id" element={<SingleAd />} />
+          
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="about" element={<About/>}/>
+        
 
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index={true} element={<Overview />} />
