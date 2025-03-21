@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   return (
-    <div className="flex w-[100vw] h-[100vh] justify-center items-center bg-[#F8F8F8]">
+    <div className="flex w-[100vw] h-[100vh] justify-between items-center bg-[#F8F8F8]">
       <div className="w-[50vw] flex flex-col justify-center items-center h-[100vh] gap-6">
         <div className=" flex flex-col justify-center items-center">
           <h1 className="text-4xl font-semibold w-full">WELCOME BACK</h1>
@@ -25,18 +25,19 @@ const Login = () => {
                 <input type="checkbox" name="" id="" />
                 <p className="pl-2 font-medium text-[14px]">Remember me</p>
               </div>
-              <p><Link to='/' className="font-medium text-[14px]">Forget Password</Link></p>
+              <p><Link to='/' className="font-medium text-[14px] hover:text-[#EA454C]">Forget Password</Link></p>
             </div>
             <div className="flex flex-col gap-3">
-              <button className="bg-[#EA454C]  py-2 rounded-xl text-white" type="submit"><Link to='/'>Sign in</Link></button>
+              <button className="bg-[#EA454C] w-full py-2 rounded-xl text-white" type="submit"><Link to='/' className="">Sign in</Link></button>
               <button className="bg-white  py-2 rounded-xl text-black border-gray-500 border-1" type="submit"><Link to='/' className="flex items-center justify-center gap-3"><FcGoogle size={24} /> <span>Sign In with Google</span> </Link></button>
-              <p>Don't have an account? <span className="text-red-600">Sign up for free!</span></p>
+              <p>Don't have an account? <Link to='/' className="text-[#EA454C]
+              ">Sign up for free!</Link></p>
             </div>
           </form>
         </div>
       </div>
       <div>
-        <img src={loginphoto} alt="Login Photo" className="h-[100vh]" />
+        <img src={loginphoto} alt="Login Photo" className="h-[100vh] " />
       </div>
 
     </div>
