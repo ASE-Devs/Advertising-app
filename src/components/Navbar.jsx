@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className="flex justify-between items-center h-16 bg-[#DDEEFE] text-black fixed w-full shadow-sm font-medium">
+        <div className="flex justify-between items-center h-16 bg-[#DDEEFE] text-black fixed w-full shadow-sm font-medium z-10">
           <div className="flex items-center pl-10">logo here</div>
           <div className="px-4 w-1/2 gap-5 flex justify-around items-center ">
             <Link to="/home" className="hover:text-[#325799]">
