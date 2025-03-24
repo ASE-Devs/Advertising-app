@@ -11,6 +11,8 @@ import Overview from "./pages/dashboard/Overview";
 import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
 import About from "./pages/auth/About";
+import EditAdPage from "./pages/dashboard/EditAdPage";
+import RecycleBin from "./pages/dashboard/RecycleBin";
 
 function App() {
   return (
@@ -20,17 +22,17 @@ function App() {
           <Route index={true} element={<Landing />} />
           <Route path="adverts" element={<Adverts />} />
           <Route path="adverts/:id" element={<SingleAd />} />
-          
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="about" element={<About/>}/>
-        
+        <Route path="about" element={<About />} />
 
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index={true} element={<Overview />} />
           <Route path="create-ad" element={<CreateAd />} />
-          <Route path="ads" element={<VendorAds/>}/>
+          <Route path="ads" element={<VendorAds />} />
+          <Route path="edit-ad" element={<EditAdPage />} />
+          <Route path="recyle-bin" element={<RecycleBin />} />
         </Route>
       </Routes>
     </BrowserRouter>
