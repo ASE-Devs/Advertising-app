@@ -2,8 +2,20 @@ import React from 'react'
 import { Link } from 'react-router'
 import signup from '../../assets/Images/signup.png'
 import { FcGoogle } from 'react-icons/fc'
+import { apiSignup } from '../../services/auth'
 
 const Signup = () => {
+  const handleSubmit = async (data) =>{
+    const payload = {
+      fistName: data.fistName,
+      lastName: data.lastName,
+    };
+    try {
+      await apiSignup(payload);
+  } catch (error) {
+    console.log(error);
+  };
+}
   return (
     <div>
       <div className="flex w-[100vw] h-[100vh] justify-between items-center bg-[#F8F8F8]">
@@ -11,7 +23,7 @@ const Signup = () => {
           <div className=" flex flex-col justify-center items-center">
             <h1 className="text-4xl font-semibold w-full">GET STARTED NOW</h1>
           </div>
-          <div className="bottom">
+          <div className="bottom" onSubmit={handleSubmit}>
             <form action="">
               <div className="flex gap-3 w-[33vw]">
                 <div className="flex flex-col w-full ">
@@ -47,7 +59,7 @@ const Signup = () => {
               <div className='flex flex-col gap-3 items-center mt-2'>
                 <p>or</p>
 
-                <button className="bg-white w-[33vw] py-2 rounded-xl text-black border-gray-500 border-1" type="submit"><Link to='/' className="flex items-center justify-center gap-3"><FcGoogle size={24} /> <span>Sign In with Google</span> </Link></button>
+                <button className="bg-white w-[33vw] py-2 rounded-xl text-black border-gray-500 border-1" type="button"><Link to='/' className="flex items-center justify-center gap-3"><FcGoogle size={24} /> <span>Sign In with Google</span> </Link></button>
                 <p>Have an account? <Link to='/' className="text-[#EA454C]
               ">Sign in</Link></p>
               </div>
