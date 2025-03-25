@@ -11,6 +11,7 @@ import { FaBagShopping, FaChildren } from "react-icons/fa6";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FcCustomerSupport } from "react-icons/fc";
 import { MdOutlinePolicy } from "react-icons/md";
+import ProductCard from "../../components/ProductCard";
 
 const Landing = () => {
   return (
