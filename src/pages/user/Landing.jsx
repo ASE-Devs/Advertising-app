@@ -6,6 +6,7 @@ import Image4 from "../../assets/Images/Dress.jpeg";
 import Image5 from "../../assets/Images/Men.jpg";
 import Image6 from "../../assets/Images/Laptop.png";
 import Image7 from "../../assets/Images/Exchange.jpg";
+import Image8 from "../../assets/Images/Studio.jpg";
 import { ArrowBigRight, GemIcon, ShirtIcon, WatchIcon } from "lucide-react";
 import { FaBagShopping, FaChildren } from "react-icons/fa6";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -18,11 +19,7 @@ const Landing = () => {
     <>
       <div className="relative w-full text-white">
         {/* Background Image */}
-        <img
-          src={Image}
-          alt="shopping"
-          className="w-full h-auto object-cover"
-        />
+        <img src={Image8} alt="Studio" className="w-full h-auto object-cover" />
 
         {/* Overlay Content */}
         <div className="absolute top-1/2 right-10 transform -translate-y-1/2 text-right w-1/2">
@@ -32,7 +29,7 @@ const Landing = () => {
           </p>
 
           {/* Shop Now Button */}
-          <button className="mt-4 px-6 py-3 bg-white text-black font-semibold rounded-lg shadow-md hover:bg-gray-200 transition">
+          <button className="mt-4 px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-300 transition">
             Join Us Now
           </button>
         </div>
@@ -57,19 +54,38 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="bg-[#F7F7F7]  justify-around items-center  p-20">
-        <h1 className=" text-black text-xl ml-5">Today's</h1>
-        <p className="pt-10 text-2xl text-black font-bold">Flash Sales</p>
-        <div className="grid grid-cols-4 gap-4 p-4 pt-10">
-          <img src={Image2} alt="Earrings" className=" object-cover hover:" />
-          <img src={Image3} alt="Toy" className=" object-cover hover:" />
-          <img src={Image4} alt="Dress" className=" object-cover hover:" />
-          <img src={Image5} alt="Men" className=" object-fit hover:" />
+      <div className="bg-[#F7F7F7] p-20">
+        <div className="text-left">
+          <h1 className="text-black text-xl">Today's</h1>
+          <p className="pt-5 text-2xl text-black font-bold">Flash Sales</p>
         </div>
-        <button className="bg-blue-900 text-white px-6 py-3 rounded-md flex items-center mt-5 ml-100 hover:bg-blue-800">
-          {" "}
-          View All Products
-        </button>
+        <div className="grid grid-cols-4 gap-4 p-4 pt-10">
+          <img
+            src={Image2}
+            alt="Earrings"
+            className="object-cover hover:scale-105 transition-transform"
+          />
+          <img
+            src={Image3}
+            alt="Toy"
+            className="object-cover hover:scale-105 transition-transform"
+          />
+          <img
+            src={Image4}
+            alt="Dress"
+            className="object-cover hover:scale-105 transition-transform"
+          />
+          <img
+            src={Image5}
+            alt="Men"
+            className="object-cover hover:scale-105 transition-transform"
+          />
+        </div>
+        <div className="flex justify-center mt-5">
+          <button className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800">
+            View All Products
+          </button>
+        </div>
       </div>
 
       <div className="justify-center items-center p-10">
