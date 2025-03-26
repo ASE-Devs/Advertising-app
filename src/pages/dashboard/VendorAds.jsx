@@ -12,7 +12,7 @@ const categories = [
   "Beauty Products",
 ];
 
-// This is a dummy one to replaced the original one from the backend
+
 const initialAdverts = [];
 
 const VendorAds = () => {
@@ -46,7 +46,7 @@ const VendorAds = () => {
   const goToRecycleBin = () => {
     navigate("../recycle-bin", { state: { deletedAds } });
   };
-
+  const imageURL = "https://res.cloudinary.com/dui8hhbha/image/upload/"
   const getAds = async () => {
     try {
       const response = await apiGetVendorAdverts();
@@ -101,7 +101,7 @@ const VendorAds = () => {
               >
                 <img
                   className="w-40 h-40 object-cover rounded-md"
-                  src={ad.image}
+                  src={`${imageURL}${ad.pictures[0]}`}
                   alt={ad.name}
                 />
                 <div className="mt-4 w-full">
