@@ -1,6 +1,8 @@
 import React from "react";
 import { SearchIcon, MessageCircleIcon, BellDot } from "lucide-react";
 import Image from "../assets/pics/profile.jpg";
+import CreateAd from "../pages/dashboard/CreateAd";
+import { Link } from "react-router";
 
 const DashBar = () => {
   return (
@@ -18,13 +20,12 @@ const DashBar = () => {
           />
         </div>
         <div className="flex justify-around w-[25vw] pr-5 items-center">
-          <button
-            type="submit"
-            className="bg-[#193CB8] px-3 py-2 rounded-xl text-white"
+          <Link to="/dashboard/create-ad"
+            className="bg-[#193CB8] px-3 py-2 rounded-xl text-white inline-block"
           >
-            {" "}
             + Add Product
-          </button>
+          </Link>
+
           <MessageCircleIcon className=""></MessageCircleIcon>
           <BellDot />
           <div className="h-10 overflow-hidden ">

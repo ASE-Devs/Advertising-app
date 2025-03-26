@@ -13,6 +13,7 @@ import VendorAds from "./pages/dashboard/VendorAds";
 import About from "./pages/auth/About";
 import EditAdPage from "./pages/dashboard/EditAdPage";
 import RecycleBin from "./pages/dashboard/RecycleBin";
+import VendorProfile from "./pages/dashboard/VendorProfile";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
           <Route path="ads" element={<VendorAds />} />
           <Route path="edit-ad" element={<EditAdPage />} />
           <Route path="recyle-bin" element={<RecycleBin />} />
+          <Route path="profile" element={<VendorProfile />} />
+         
         </Route>
       </Routes>
     </BrowserRouter>

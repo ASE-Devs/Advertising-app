@@ -10,7 +10,7 @@ export default {
     { name: "Vendor Ads", path: "/dashboard/ads", icon:User },
     // Dummy and its not linked, can work on it well
 
-    { name: "Setting", path: "/dashboard", icon: Settings },
+    { name: "Setting", path: "/dashboard/profile", icon: Settings },
 
     { name: "Analysis", path: "/dashboard", icon: ChartBar },
   ],

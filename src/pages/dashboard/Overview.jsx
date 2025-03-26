@@ -2,6 +2,8 @@ import React from "react";
 import Image from "../../assets/pics/bg-overview.jpg";
 import proFile from "../../assets/pics/profile.jpg";
 import { Facebook, LucideYoutube, Twitter } from "lucide-react";
+import { Link } from "react-router";
+import VendorProfile from "./VendorProfile";
 
 const Overview = () => {
   return (
@@ -30,9 +32,13 @@ const Overview = () => {
           <Facebook className="text-gray-500 hover:text-blue-500" />
           <Twitter className="text-gray-500 hover:text-blue-500" />
           <LucideYoutube className="text-gray-500 hover:text-blue-500" />
-          <button className="border px-4 py-1 rounded-lg bg-[#073180] text-white  hover:bg-blue-700 transition duration-300">
+         
+         <Link to="/dashboard/profile">
+         <button className="border px-4 py-1 rounded-lg bg-[#073180] text-white  hover:bg-blue-700 transition duration-300">
             Edit profile
           </button>
+         </Link>
+        
         </div>
       </div>
 
