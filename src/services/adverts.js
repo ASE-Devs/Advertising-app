@@ -9,7 +9,7 @@ export const apiAddAdvert = async (payload) =>
 
 export const apiGetAllAdverts = async () => apiClient.get("/adverts");
 
-export const apiGetVendorAdverts = async () => apiClient.get("/vendor-adverts");
+export const apiGetVendorAdverts = async () => apiClient.get("/adverts");
 
 export const apiUpdateAdvert = async (id, payload) =>
   apiClient.patch(`/adverts/${id}`, payload);
