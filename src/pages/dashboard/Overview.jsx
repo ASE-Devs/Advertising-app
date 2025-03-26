@@ -30,7 +30,7 @@ const Overview = () => {
           <Facebook className="text-gray-500 hover:text-blue-500" />
           <Twitter className="text-gray-500 hover:text-blue-500" />
           <LucideYoutube className="text-gray-500 hover:text-blue-500" />
-          <button className="border px-4 py-1 rounded-lg hover:text-blue-500">
+          <button className="border px-4 py-1 rounded-lg bg-[#073180] text-white  hover:bg-blue-700 transition duration-300">
             Edit profile
           </button>
         </div>

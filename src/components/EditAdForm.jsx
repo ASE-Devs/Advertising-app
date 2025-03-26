@@ -13,8 +13,6 @@ const EditAdForm = ({ ad, onSubmit }) => {
       onSubmit={handleSubmit}
       className="bg-white p-6 rounded-lg shadow-md w-full max-w-lg mx-auto"
     >
-      <h2 className="text-xl font-semibold mb-4 text-center">Edit Advertisement</h2>
-
       <div className="mb-4">
         <label className="block text-gray-700 font-medium">Title</label>
         <input
