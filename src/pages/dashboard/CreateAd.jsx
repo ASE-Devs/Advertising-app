@@ -7,7 +7,7 @@ const CreateAd = () => {
     const formData = new FormData(event.target);
 
     try{
-      const response =await apiAddAdvert(FormData);
+      const response =await apiAddAdvert(formData);
       console.log(response);
     }catch(error){
       console.error(error);}
@@ -20,17 +20,17 @@ const CreateAd = () => {
         </h1>
 
         <div className="space-y-4">
-          <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          {/* <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
             <option value="">Select a category</option>
             <option value="Fashion & Accessories">Fashion & Accessories</option>
             <option value="Beauty Products">Beauty Products</option>
             <option value="Kids & Toys">Kids & Toys</option>
-          </select>
+          </select> */}
 
           <input
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             type="text"
-            name="title"
+            name="name"
             placeholder="Ad title"
             required
           />
@@ -49,7 +49,7 @@ const CreateAd = () => {
           <input
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             type="file"
-            name="image"
+            name="pictures"
             accept="image/*"
             required
           />
@@ -59,6 +59,14 @@ const CreateAd = () => {
             name="description"
             placeholder="Description"
             rows="4"
+            required
+          ></textarea>
+
+<textarea
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
+            name="quantity"
+            placeholder="Quantity"
+            rows="1"
             required
           ></textarea>
 
