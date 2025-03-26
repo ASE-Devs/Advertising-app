@@ -3,10 +3,11 @@ import { Camera } from "lucide-react";
 
 const VendorProfile = () => {
   const [formData, setFormData] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    businessName: "Doe's Electronics",
-    phone: "+233 123 456 789",
+    name: "",
+    quote: "",
+    email: "",
+    businessName: "",
+    phone: "",
   });
 
   const handleChange = (e) => {
@@ -25,7 +26,6 @@ const VendorProfile = () => {
           Edit Profile
         </h2>
 
-        {/* Profile Picture Upload */}
         <div className="flex justify-center mb-4">
           <label className="relative cursor-pointer">
             <input type="file" className="hidden" />
@@ -35,7 +35,6 @@ const VendorProfile = () => {
           </label>
         </div>
 
-        {/* Profile Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="text-gray-700 font-medium">Name</label>
@@ -50,11 +49,11 @@ const VendorProfile = () => {
           </div>
 
           <div>
-            <label className="text-gray-700 font-medium">Email</label>
+            <label className="text-gray-700 font-medium">Quote</label>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              name="quote"
+              value={formData.quote}
               onChange={handleChange}
               className="w-full p-2 mt-1 border rounded-lg focus:ring focus:ring-blue-300"
               required
@@ -85,7 +84,6 @@ const VendorProfile = () => {
             />
           </div>
 
-          {/* Buttons */}
           <div className="flex justify-between mt-4">
             <button
               type="button"
@@ -107,9 +105,3 @@ const VendorProfile = () => {
 };
 
 export default VendorProfile;
-
-
-
-
-
-

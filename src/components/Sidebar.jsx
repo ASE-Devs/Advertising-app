@@ -2,6 +2,7 @@ import React from "react";
 import K from "../constants";
 import { NavLink } from "react-router";
 import { CiLogout } from "react-icons/ci";
+import { Link } from "react-router";
 
 const Sidebar = () => {
   return (
@@ -24,10 +25,18 @@ const Sidebar = () => {
       </div >
       <div className="flex text-white font-bold font-sans text-2 hover:bg-[#5c6064] px-3 py-2 w-full rounded-md  gap-x-2 items-center">
       <CiLogout className="text-2xl"/>
+      <Link to={"/"}>
       <button className="mt-auto">Logout</button>
+      </Link>
+      
       </div>
       
     
+
+
+
+     
+
     </div>
   );
 };

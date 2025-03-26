@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Trash2 } from "lucide-react";
 import EditDeleteButtons from "../../components/EditDeleteButtons";
-import bagImage from "../../assets/pics/bag1.jpg";
 import { apiGetVendorAdverts } from "../../services/adverts";
 
 const categories = [
@@ -105,10 +104,11 @@ const VendorAds = () => {
                   alt={ad.name}
                 />
                 <div className="mt-4 w-full">
-                  <p className="text-lg font-semibold truncate">{ad.name}</p>
-                  <p className="text-gray-700 text-xl font-bold">{ad.price}</p>
+                  <h1 className="text-lg font-bold text-black">{ad.name}</h1>
+                  <p className="text-l font-semibold text-[#073180] mt-1">  GH₵ {ad.price}</p>
                   <p className="text-gray-500 font-medium">{ad.category}</p>
                   <div className="flex justify-center mt-3">
+
                     <EditDeleteButtons
                       onEdit={() => handleEdit(ad)}
                       onDelete={() => handleDelete(ad.id)}

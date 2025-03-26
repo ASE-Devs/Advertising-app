@@ -1,6 +1,6 @@
 import React from "react";
 import { SearchIcon, MessageCircleIcon, BellDot } from "lucide-react";
-import Image from "../assets/pics/profile.jpg";
+import Image from "../assets/pics/profile3.jpg";
 import CreateAd from "../pages/dashboard/CreateAd";
 import { Link } from "react-router";
 
@@ -29,11 +29,13 @@ const DashBar = () => {
           <MessageCircleIcon className=""></MessageCircleIcon>
           <BellDot />
           <div className="h-10 overflow-hidden ">
-            <img
-              src={Image}
-              alt=""
-              className="rounded-full w-full h-full relative object-cover border-white shadow-md"
-            />
+          <img
+  src={Image}
+  alt="Profile"
+  className="w-10 h-10 mb-0 mt-0 rounded-full object-cover border-4 border-white shadow-md"
+/>
+
+
           </div>
         </div>
       </nav>

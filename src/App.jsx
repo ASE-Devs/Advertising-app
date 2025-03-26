@@ -14,6 +14,7 @@ import About from "./pages/auth/About";
 import EditAdPage from "./pages/dashboard/EditAdPage";
 import RecycleBin from "./pages/dashboard/RecycleBin";
 import VendorProfile from "./pages/dashboard/VendorProfile";
+import Analysis from "./pages/dashboard/Analysis";
 
 function App() {
   return (
@@ -33,9 +34,10 @@ function App() {
           <Route path="create-ad" element={<CreateAd />} />
           <Route path="ads" element={<VendorAds />} />
           <Route path="edit-ad" element={<EditAdPage />} />
-          <Route path="recyle-bin" element={<RecycleBin />} />
+          <Route path="recycle-bin" element={<RecycleBin />} />
           <Route path="profile" element={<VendorProfile />} />
-         
+          <Route path="analysis" element={<Analysis />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
