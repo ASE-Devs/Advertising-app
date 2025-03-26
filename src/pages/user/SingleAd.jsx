@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image  from '../../assets/Images/Dress.jpeg'
 import Image2 from '../../assets/Images/Elegance.jpeg'
 import Image3 from '../../assets/Images/Glowy.jpeg'
 import Image4 from '../../assets/Images/Top.jpeg'
 import Filter from '../../components/Filter'
+import { useParams } from 'react-router'
+import { useState } from 'react'
+import { apiGetSingleAdvert } from '../../services/adverts'
+
 
 const SingleAd = () => {
+   const {id} = useParams();
+
+   const [] = useState({});
+
+   const getAd = async () => {
+    try {
+          const response = await apiGetSingleAdvert(id);
+          setAdverts(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      useEffect(() =>{
+        getAd();
+      }, [])
+
   return (
     <>
     <div className="flex flex-col md:flex-row p-20 bg-white min-h-screen">
@@ -22,7 +43,7 @@ const SingleAd = () => {
 
       {/* Right: Product Details */}
       <div className="md:w-1/2 p-20 pt-5 flex flex-col justify-center">
-        <h1 className="text-3xl font-bold text-black">Timeless Elegance Dress</h1>
+        <h1 className="text-3xl font-bold text-black">Elegant dress</h1>
         <p className="text-xl text-black font-semibold pt-4">GH₵ 250</p>
         <p className="text-black text-s pt-4">
           The <strong>Timeless Elegance Dress</strong> in a striking lime-green hue exudes royalty and sophistication. 

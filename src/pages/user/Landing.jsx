@@ -13,6 +13,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { FcCustomerSupport } from "react-icons/fc";
 import { MdOutlinePolicy } from "react-icons/md";
 import ProductCard from "../../components/ProductCard";
+import { Link } from "react-router";
 
 const Landing = () => {
   return (
@@ -29,9 +30,11 @@ const Landing = () => {
           </p>
 
           {/* Shop Now Button */}
-          <button className="mt-4 px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-300 transition">
-            Join Us Now
-          </button>
+          <Link to={`/signup`}>
+            <button className="mt-4 px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-300 transition">
+              Join us Now
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -82,9 +85,11 @@ const Landing = () => {
           />
         </div>
         <div className="flex justify-center mt-5">
-          <button className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800">
-            View All Products
-          </button>
+          <Link to={`/adverts`}>
+            <button className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800">
+              View All Products
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -135,9 +140,9 @@ const Landing = () => {
             connect buyers and sellers seamlessly, offering a curated selection
             of high-quality products that match your style and needs.
           </p>
-          <button className="bg-blue-900 text-white px-6 py-3 flex items-center justify-center gap-2 mt-5 hover:bg-blue-800 rounded-md">
+          <Link to = {`/about`}><button className="bg-blue-900 text-white px-6 py-3 flex items-center justify-center gap-2 mt-5 hover:bg-blue-800 rounded-md">
             More <ArrowBigRight />
-          </button>
+          </button></Link>
         </div>
       </div>
 
