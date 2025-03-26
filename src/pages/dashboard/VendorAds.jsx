@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Trash2 } from "lucide-react";
 import EditDeleteButtons from "../../components/EditDeleteButtons";
 import bagImage from "../../assets/pics/bag1.jpg";
+import {  apiGetVendorAdverts, } from "../../services/adverts";
 
 const categories = ["All Categories", "Kids & Toys", "Fashion & Accessories", "Beauty Products"];
 
@@ -46,10 +47,26 @@ const VendorAds = () => {
     navigate("../recycle-bin", { state: { deletedAds } });
   };
 
+ const [ads, setAds] = useState([]);
+
+ const getAds= async () => {
+  try {
+    const response = await apiGetVendorAdverts();
+    setAds();
+  }catch(error){
+       console.log(error)
+  }
+};
+    
+   useEffect(()=>{
+    getAds();
+   }
+    
+  )
+
   return (
     <div className="min-h-screen w-full bg-gray-100 px-4 sm:px-6 lg:px-16">
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6 flex justify-between items-center w-full">
           <h1 className="text-2xl font-semibold">My Adverts</h1>
           <button className="flex items-center text-red-500 border border-red-500 px-3 py-1 rounded-md" onClick={goToRecycleBin}>
@@ -92,7 +109,8 @@ const VendorAds = () => {
             <p className="text-gray-500 text-center col-span-full">No adverts available in this category.</p>
           )}
         </div>
-      </div>
+      </div> 
+      
     </div>
   );
 };
