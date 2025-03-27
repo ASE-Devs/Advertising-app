@@ -147,7 +147,7 @@ const ContactUs = () => {
                   name="message"
                   id=""
                   placeholder="Write your message here..."
-                  className="border-l-1 border-b-1 pl-2 h-30"
+                  className="border-l-1 border-b-1 pl-2 h-30 outline-none resize-none"
                 ></textarea>
               </div>
               <button
