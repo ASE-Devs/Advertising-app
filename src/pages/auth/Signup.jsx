@@ -17,7 +17,7 @@ const Signup = () => {
   };
   return (
     <div>
-      <div className="flex w-[100vw] h-[120vh] justify-between items-center bg-[#F8F8F8]">
+      <div className="flex w-[100vw] justify-between items-center bg-[#F8F8F8]">
         <div className="w-[50vw] flex flex-col justify-center items-center h-[100vh] gap-6">
           <div className=" flex flex-col justify-center items-center">
             <h1 className="text-4xl font-semibold w-full">GET STARTED NOW</h1>
