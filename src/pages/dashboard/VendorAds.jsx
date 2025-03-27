@@ -6,11 +6,10 @@ import { apiGetVendorAdverts } from "../../services/adverts";
 
 const categories = [
   "All Categories",
-  "Kids & Toys",
-  "Fashion & Accessories",
-  "Beauty Products",
+  "fashion and accessories",
+  "beauty products",
+  "kids and toys",
 ];
-
 
 const initialAdverts = [];
 
@@ -45,11 +44,11 @@ const VendorAds = () => {
   const goToRecycleBin = () => {
     navigate("../recycle-bin", { state: { deletedAds } });
   };
-  const imageURL = "https://res.cloudinary.com/dui8hhbha/image/upload/"
+  const imageURL = "https://res.cloudinary.com/dui8hhbha/image/upload/";
   const getAds = async () => {
     try {
       const response = await apiGetVendorAdverts();
-      setAdverts(response.data);
+      setAdverts(response.data.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -105,13 +104,15 @@ const VendorAds = () => {
                 />
                 <div className="mt-4 w-full">
                   <h1 className="text-lg font-bold text-black">{ad.name}</h1>
-                  <p className="text-l font-semibold text-[#073180] mt-1">  GH₵ {ad.price}</p>
+                  <p className="text-l font-semibold text-[#073180] mt-1">
+                    {" "}
+                    GH₵ {ad.price}
+                  </p>
                   <p className="text-gray-500 font-medium">{ad.category}</p>
                   <div className="flex justify-center mt-3">
-
                     <EditDeleteButtons
-                      onEdit={() => handleEdit(ad)}
-                      onDelete={() => handleDelete(ad.id)}
+                      handleEdit={() => handleEdit(ad)}
+                      handleDelete={() => handleDelete(ad.id)}
                     />
                   </div>
                 </div>
