@@ -2,30 +2,40 @@ import React from "react";
 import { apiAddAdvert } from "../../services/adverts";
 
 const CreateAd = () => {
-  const handleSubmit = async(event)=>{
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    try{
-      const response =await apiAddAdvert(formData);
+    try {
+      const response = await apiAddAdvert(formData);
       console.log(response);
-    }catch(error){
-      console.error(error);}
-  }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
-      <form className="w-full max-w-lg bg-white p-6 rounded-2xl shadow-lg" onSubmit={handleSubmit}>
-        <h1 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+    <div className="flex justify-center items-center  bg-gray-100 px-4">
+      <form
+        className="w-full max-w-lg bg-white p-6 rounded-2xl shadow-lg"
+        onSubmit={handleSubmit}
+      >
+        <h1 className="text-xl font-semibold text-gray-800 mb-2 text-center">
           Post an Ad
         </h1>
 
-        <div className="space-y-4">
-          {/* <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <div className="space-y-4 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ">
+          <select
+            name="category"
+            required
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          >
             <option value="">Select a category</option>
-            <option value="Fashion & Accessories">Fashion & Accessories</option>
-            <option value="Beauty Products">Beauty Products</option>
-            <option value="Kids & Toys">Kids & Toys</option>
-          </select> */}
+            <option value="fashion and accessories">
+              Fashion & Accessories
+            </option>
+            <option value="beauty products">Beauty Products</option>
+            <option value="kids and toys">Kids & Toys</option>
+          </select>
 
           <input
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
@@ -40,6 +50,7 @@ const CreateAd = () => {
             <input
               className="w-full bg-transparent focus:outline-none"
               type="number"
+              min={0}
               name="price"
               placeholder="0.00"
               required
@@ -51,6 +62,7 @@ const CreateAd = () => {
             type="file"
             name="pictures"
             accept="image/*"
+            alt=""
             required
           />
 
@@ -58,11 +70,11 @@ const CreateAd = () => {
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
             name="description"
             placeholder="Description"
-            rows="4"
+            rows="2"
             required
           ></textarea>
 
-<textarea
+          <textarea
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
             name="quantity"
             placeholder="Quantity"

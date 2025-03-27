@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { apiUpdateAdvert } from "../services/adverts";
+const categories = [
+  "fashion and accessories",
+  "beauty products",
+  "kids and toys",
+];
 
-const categories = ["Fashion & Accessories", "Kids & Toys", "Beauty Products"];
+const EditAdForm = () => {
+  const navigate = useNavigate();
+  const [ad, setAd] = useState({});
 
-const EditAdForm = ({ ad, onSubmit }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(); // Placeholder for backend integration
+  const getAd = async () => {
+    try {
+      setAd(JSON.parse(localStorage.getItem("selectedAd")));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAd();
+  }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    try {
+      await apiUpdateAdvert(ad.id, data);
+      navigate("/dashboard/ads");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -17,8 +43,8 @@ const EditAdForm = ({ ad, onSubmit }) => {
         <label className="block text-gray-700 font-medium">Title</label>
         <input
           type="text"
-          name="title"
-          defaultValue={ad?.title || ""}
+          name="name"
+          defaultValue={ad?.name || ""}
           className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300"
         />
       </div>
