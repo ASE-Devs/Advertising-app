@@ -13,7 +13,7 @@ const Overview = () => {
   const getAds = async () => {
     try {
       const response = await apiGetVendorAdverts();
-      setAdverts(response.data);
+      setAdverts(response.data.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);

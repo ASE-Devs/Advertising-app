@@ -11,4 +11,7 @@ export const apiGetVendorAdverts = async () => apiClient.get("/adverts");
 export const apiUpdateAdvert = async (id, payload) =>
   apiClient.patch(`/adverts/${id}`, payload);
 
+export const apiDeleteVendorAdvertById = async (id) =>
+  apiClient.delete(`/adverts/${id}`);
+
 export const apiGetSingleAdvert = async (id) => apiClient.get(`/adverts/${id}`);
