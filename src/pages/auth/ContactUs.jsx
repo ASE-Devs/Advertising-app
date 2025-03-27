@@ -1,73 +1,144 @@
-import React from 'react'
+import { LucidePhoneCall } from "lucide-react";
+import React from "react";
+import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import {
+  MdOutlineLocationCity,
+  MdOutlineLocationOn,
+  MdOutlineMail,
+} from "react-icons/md";
 
 const ContactUs = () => {
   return (
-    <div className='w-[100vw] h-[100vh]'>
-        <div className='flex flex-col items-center'>
-            <h1 className='font-black text-3xl'>Contact Us</h1>
-            <p className='text-[#727272]'>Any question or remarks? Just write us a message!</p>
-        </div>
-        <div>
-            <div>
-            <div>
-                <div>
-                    <h3>Contact Information</h3>
-                    <p>Say something to start a live chat!</p>
-                </div>
-                <div>
-                    <p> <span>icon here</span> <span>+233 24 179 0035</span></p>
-                    <p><span>email icon</span> <span>devs@gmail.com</span></p>
+    <div className="w-[100vw] h-[100vh] flex flex-col">
+      <div className="flex flex-col items-center gap-3 p-8">
+        <h1 className="font-bold text-3xl">Contact Us</h1>
+        <p className="text-[#727272]">
+          Any question or remarks? Just write us a message!
+        </p>
+      </div>
+      <div className="flex h-[80vh] ">
+        <div className="w-[35vw] flex flex-col justify-between bg-black text-white p-10 rounded-tr-xl rounded-br-xl">
+          <div className=" flex flex-col gap-2">
+            <h3 className="font-bold text-2xl">Contact Information</h3>
+            <p className="text-[#c9c9c9]">
+              Say something to start a live chat!
+            </p>
+          </div>
+          <div className="flex flex-col gap-13 ">
+            <p className="flex gap-8 items-center">
+              <span>
+                <LucidePhoneCall />
+              </span>{" "}
+              <span>+233 24 179 0035</span>
+            </p>
+            <p className="flex gap-8 items-center">
+              <span>
+                <MdOutlineMail className="text-2xl" />
+              </span>{" "}
+              <span>devs@gmail.com</span>
+            </p>
+            <p className="flex items-center gap-8">
+              <span>
+                <MdOutlineLocationOn className="text-2xl" />
+              </span>{" "}
+              <span>132 Buro, Labone Street</span>
+            </p>
+          </div>
 
-                </div>
-                <div>
-                    <p><span>location icon</span> <span>132 Buro, Labone Street</span></p>
-                </div>
-            </div>
-            <div>
-                <span>x icon</span>
-                <span> ig icon</span>
-                <span>facebook</span>
-            </div>
-            </div>
-            <div>
-                <form action="">
-                    <div>
-                    <div>
-                        <label htmlFor="">First Name</label>
-                        <input type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="">Last Name</label>
-                        <input type="text" />
-                    </div>
-                    </div>
-                    <div>
-                    <div>
-                        <label htmlFor="">First Name</label>
-                        <input type="email" />
-                    </div>
-                    <div>
-                        <label htmlFor="">Last Name</label>
-                        <input type="number"/>
-                    </div>
-                    </div>
-                    <div>
-                        <label htmlFor=""> <input type="radio" name="subject" id="" value='General Inquiry' /> General Inquiry</label>
-                        <label htmlFor=""> <input type="radio" name="subject" id="" value='Refund' /> Refund</label>
-                        <label htmlFor=""> <input type="radio" name="subject" id="" value='Suggestion' /> Suggestion</label>
-                        <label htmlFor=""> <input type="radio" name="subject" id="" value='Compliment' /> Compliment</label>
-                    </div>
-                    <div>
-                        <label htmlFor="">Message</label>
-                        <textarea name="message" id="" ></textarea>
-                    </div>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
+          <div className="flex gap-5">
+            <span>
+              <FaXTwitter />
+            </span>
+            <span>
+              {" "}
+              <FaFacebook />
+            </span>
+            <span>
+              <FaInstagram />
+            </span>
+          </div>
         </div>
-
+        <div className="w-[65vw] p-10">
+          <form action="" className="flex flex-col gap-10">
+            <div className="flex gap-10">
+              <div className="flex flex-col w-[100%] gap-2">
+                <label htmlFor="">First Name</label>
+                <input
+                  type="text"
+                  className="border-b-1 border-[#8D8D8D] outline-none"
+                />
+              </div>
+              <div className="flex flex-col w-[100%] gap-2">
+                <label htmlFor="">Last Name</label>
+                <input
+                  type="text"
+                  className="border-b-1 border-[#8D8D8D] outline-none"
+                />
+              </div>
+            </div>
+            <div className="flex gap-10">
+              <div className="flex flex-col w-[100%] gap-2">
+                <label htmlFor="">Email</label>
+                <input
+                  type="email"
+                  className="border-b-1 border-[#8D8D8D] outline-none"
+                />
+              </div>
+              <div className="flex flex-col w-[100%] gap-2">
+                <label htmlFor="">Phone Number</label>
+                <input
+                  type="tel"
+                  className="border-b-1 border-[#8D8D8D] outline-none"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="">
+                {" "}
+                <input
+                  type="radio"
+                  name="subject"
+                  id=""
+                  value="General Inquiry"
+                />{" "}
+                General Inquiry
+              </label>
+              <label htmlFor="">
+                {" "}
+                <input type="radio" name="subject" id="" value="Refund" />{" "}
+                Refund
+              </label>
+              <label htmlFor="">
+                {" "}
+                <input
+                  type="radio"
+                  name="subject"
+                  id=""
+                  value="Suggestion"
+                />{" "}
+                Suggestion
+              </label>
+              <label htmlFor="">
+                {" "}
+                <input
+                  type="radio"
+                  name="subject"
+                  id=""
+                  value="Compliment"
+                />{" "}
+                Compliment
+              </label>
+            </div>
+            <div>
+              <label htmlFor="">Message</label>
+              <textarea name="message" id=""></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactUs
+export default ContactUs;
