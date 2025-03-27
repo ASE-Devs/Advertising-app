@@ -92,8 +92,8 @@ const ContactUs = () => {
                 />
               </div>
             </div>
-            <div>
-              <label htmlFor="">
+            <div className="flex justify-between">
+              <label htmlFor="" className="flex items-center gap-2">
                 {" "}
                 <input
                   type="radio"
@@ -101,14 +101,14 @@ const ContactUs = () => {
                   id=""
                   value="General Inquiry"
                 />{" "}
-                General Inquiry
+                <p>General Inquiry</p>
               </label>
-              <label htmlFor="">
+              <label htmlFor="" className="flex items-center gap-2">
                 {" "}
                 <input type="radio" name="subject" id="" value="Refund" />{" "}
-                Refund
+                <p>Refund</p>
               </label>
-              <label htmlFor="">
+              <label htmlFor="" className="flex items-center gap-2">
                 {" "}
                 <input
                   type="radio"
@@ -116,9 +116,9 @@ const ContactUs = () => {
                   id=""
                   value="Suggestion"
                 />{" "}
-                Suggestion
+                <p>Suggestion</p>
               </label>
-              <label htmlFor="">
+              <label htmlFor="" className="flex items-center gap-2">
                 {" "}
                 <input
                   type="radio"
@@ -126,7 +126,7 @@ const ContactUs = () => {
                   id=""
                   value="Compliment"
                 />{" "}
-                Compliment
+                <p>Compliment</p>
               </label>
             </div>
             <div>
