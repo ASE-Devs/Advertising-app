@@ -1,5 +1,5 @@
-import { ChartBar, Home, Icon, icons, PlusIcon, Settings, User } from "lucide-react";
-import { Profiler } from "react";
+import { ChartBar, Home, PlusIcon, Settings, User } from "lucide-react";
+
 
 export default {
   NAVLINKS: [
@@ -8,10 +8,9 @@ export default {
     { name: "Create Ad", path: "/dashboard/create-ad", icon: PlusIcon },
 
     { name: "Vendor Ads", path: "/dashboard/ads", icon:User },
-    // Dummy and its not linked, can work on it well
 
-    { name: "Setting", path: "/dashboard", icon: Settings },
+    { name: "Setting", path: "/dashboard/profile", icon: Settings },
 
-    { name: "Analysis", path: "/dashboard", icon: ChartBar },
+    { name: "Analysis", path: "/dashboard/analysis", icon: ChartBar },
   ],
 };
