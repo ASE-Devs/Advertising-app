@@ -9,14 +9,14 @@ import {
 
 const ContactUs = () => {
   return (
-    <div className="w-[100vw] h-[100vh] flex flex-col">
+    <div className="w-[] h-[] flex flex-col">
       <div className="flex flex-col items-center gap-3 p-8">
         <h1 className="font-bold text-3xl">Contact Us</h1>
         <p className="text-[#727272]">
           Any question or remarks? Just write us a message!
         </p>
       </div>
-      <div className="flex h-[80vh] ">
+      <div className="flex ">
         <div className="w-[35vw] flex flex-col justify-between bg-black text-white p-10 rounded-tr-xl rounded-br-xl">
           <div className=" flex flex-col gap-2">
             <h3 className="font-bold text-2xl">Contact Information</h3>
@@ -140,12 +140,22 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="flex ">
-              <div className="flex flex-col w-[30vw]">
+            <div className="flex flex-col items-end gap-10">
+              <div className="flex flex-col w-[100%]">
                 <label htmlFor="">Message</label>
-                <textarea name="message" id=""></textarea>
+                <textarea
+                  name="message"
+                  id=""
+                  placeholder="Write your message here..."
+                  className="border-l-1 border-b-1 pl-2 h-30"
+                ></textarea>
               </div>
-              <button type="submit">Send Message</button>
+              <button
+                type="submit"
+                className="bg-black text-white px-12 py-3 rounded-[5px]"
+              >
+                Send Message
+              </button>
             </div>
           </form>
         </div>
