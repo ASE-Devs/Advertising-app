@@ -92,48 +92,61 @@ const ContactUs = () => {
                 />
               </div>
             </div>
-            <div className="flex justify-between">
-              <label htmlFor="" className="flex items-center gap-2">
-                {" "}
-                <input
-                  type="radio"
-                  name="subject"
-                  id=""
-                  value="General Inquiry"
-                />{" "}
-                <p>General Inquiry</p>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="" className="font-bold ">
+                Select Subject
               </label>
-              <label htmlFor="" className="flex items-center gap-2">
-                {" "}
-                <input type="radio" name="subject" id="" value="Refund" />{" "}
-                <p>Refund</p>
-              </label>
-              <label htmlFor="" className="flex items-center gap-2">
-                {" "}
-                <input
-                  type="radio"
-                  name="subject"
-                  id=""
-                  value="Suggestion"
-                />{" "}
-                <p>Suggestion</p>
-              </label>
-              <label htmlFor="" className="flex items-center gap-2">
-                {" "}
-                <input
-                  type="radio"
-                  name="subject"
-                  id=""
-                  value="Compliment"
-                />{" "}
-                <p>Compliment</p>
-              </label>
+              <div className="flex justify-between">
+                <label htmlFor="" className="flex items-center gap-2">
+                  {" "}
+                  <input
+                    type="radio"
+                    name="subject"
+                    id=""
+                    value="General Inquiry"
+                  />{" "}
+                  <p>General Inquiry</p>
+                </label>
+                <label htmlFor="" className="flex items-center gap-2">
+                  {" "}
+                  <input
+                    type="radio"
+                    name="subject"
+                    id=""
+                    value="Refund"
+                  />{" "}
+                  <p>Refund</p>
+                </label>
+                <label htmlFor="" className="flex items-center gap-2">
+                  {" "}
+                  <input
+                    type="radio"
+                    name="subject"
+                    id=""
+                    value="Suggestion"
+                  />{" "}
+                  <p>Suggestion</p>
+                </label>
+                <label htmlFor="" className="flex items-center gap-2">
+                  {" "}
+                  <input
+                    type="radio"
+                    name="subject"
+                    id=""
+                    value="Compliment"
+                  />{" "}
+                  <p>Compliment</p>
+                </label>
+              </div>
             </div>
-            <div>
-              <label htmlFor="">Message</label>
-              <textarea name="message" id=""></textarea>
+
+            <div className="flex ">
+              <div className="flex flex-col w-[30vw]">
+                <label htmlFor="">Message</label>
+                <textarea name="message" id=""></textarea>
+              </div>
+              <button type="submit">Send Message</button>
             </div>
-            <button type="submit">Send Message</button>
           </form>
         </div>
       </div>
