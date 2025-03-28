@@ -19,17 +19,21 @@ const VendorAds = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [adverts, setAdverts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const imageURL = "https://res.cloudinary.com/dui8hhbha/image/upload/";
 
   useEffect(() => {
     const getAds = async () => {
+      setLoading(true);
       try {
         const response = await apiGetVendorAdverts();
-        console.log("Fetched Adverts:", response.data.data); // Debugging log
+        console.log("Fetched Adverts:", response.data.data);
         setAdverts(response.data.data);
       } catch (error) {
         toast.error("Failed to fetch adverts");
         console.error("Error fetching adverts:", error);
+      } finally {
+        setLoading(false);
       }
     };
     getAds();
@@ -41,17 +45,18 @@ const VendorAds = () => {
       : adverts.filter((ad) => ad.category === selectedCategory);
 
   const handleEdit = (ad) => {
-    const formattedAd = { ...ad, id: ad._id || ad.id }; // Ensure correct ID format
+    localStorage.removeItem("selectedAd");
+    const formattedAd = { ...ad, id: ad._id || ad.id };
     localStorage.setItem("selectedAd", JSON.stringify(formattedAd));
     navigate("../edit-ad");
   };
 
   const handleDelete = async (id) => {
     const adToDelete = adverts.find((ad) => ad._id === id || ad.id === id);
-    if (adToDelete && window.confirm(`Delete "${adToDelete.name}"?`)) {
+    if (adToDelete && (`Delete "${adToDelete.name}" (GH₵ ${adToDelete.price})?`)) {
       try {
         await apiDeleteVendorAdvertById(id);
-        setAdverts(adverts.filter((ad) => ad._id !== id && ad.id !== id));
+        setAdverts((prevAds) => prevAds.filter((ad) => ad._id !== id && ad.id !== id));
 
         toast.success("Advert moved to Recycle Bin!", {
           style: {
@@ -74,6 +79,10 @@ const VendorAds = () => {
   const goToRecycleBin = () => {
     navigate("../recycle-bin");
   };
+
+  if (loading) {
+    return <p className="text-center text-gray-500">Loading adverts...</p>;
+  }
 
   return (
     <div className="min-h-screen w-full bg-gray-100 px-4 sm:px-6 lg:px-16">
@@ -114,7 +123,7 @@ const VendorAds = () => {
                 {ad.pictures && ad.pictures.length > 0 ? (
                   <img
                     className="w-40 h-40 object-cover rounded-md"
-                    src={`${imageURL}${ad.pictures[0]}`}
+                    src={`${imageURL}${ad.pictures?.[0] || "default-placeholder.jpg"}`}
                     alt={ad.name}
                   />
                 ) : (

@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bottom flex w-full max-w-[80vw] justify-between border-t items-center pt-5">
-        <p>Logo</p>
+        <p>FamilyBloom</p>
         <p>&copy; 2025, Made with passion by ASE Devs</p>
       </div>
     </footer>

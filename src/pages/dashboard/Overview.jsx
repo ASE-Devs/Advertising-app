@@ -3,7 +3,6 @@ import Image from "../../assets/pics/bg-overview2.jpg";
 import proFile from "../../assets/pics/profile3.jpg";
 import { Facebook, LucideYoutube, Twitter } from "lucide-react";
 import { Link } from "react-router";
-import VendorProfile from "./VendorProfile";
 import { apiGetVendorAdverts } from "../../services/adverts";
 
 const Overview = () => {
@@ -42,7 +41,7 @@ const Overview = () => {
           />
 
           <div>
-            <h1 className="text-xl font-bold">Abena Yeboah</h1>
+            <h1 className="text-xl font-bold">Regina Yeboah</h1>
             <p className="text-gray-500">
               Envision greatness. Embrace innovation!
             </p>

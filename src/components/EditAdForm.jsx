@@ -62,7 +62,7 @@ const EditAdForm = () => {
         <div className="flex items-center border rounded-md px-4 py-2 bg-gray-100">
           <span className="text-gray-700 font-semibold mr-2">GH₵</span>
           <input
-            type="text"
+            type="number"
             name="price"
             value={ad.price}
             onChange={handleChange}

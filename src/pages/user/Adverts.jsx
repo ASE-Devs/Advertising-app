@@ -44,7 +44,7 @@ const Adverts = () => {
 
               <div className="product-details text-center">
                 <h1 className="font-bold text-lg">{ad.name}</h1>
-                <p className="font-medium text-gray-700">{ad.price}</p>
+                <p className="font-medium text-gray-700"> GH₵ {ad.price}</p>
 
                 <div className="flex justify-center items-center gap-1 text-yellow-500 mt-1">
                   <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
