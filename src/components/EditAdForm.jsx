@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { apiUpdateAdvert } from "../services/adverts";
+
 const categories = [
   "fashion and accessories",
   "beauty products",
@@ -9,28 +10,34 @@ const categories = [
 
 const EditAdForm = () => {
   const navigate = useNavigate();
-  const [ad, setAd] = useState({});
-
-  const getAd = async () => {
-    try {
-      setAd(JSON.parse(localStorage.getItem("selectedAd")));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const [ad, setAd] = useState({ name: "", price: "", category: "" });
 
   useEffect(() => {
-    getAd();
+    const storedAd = JSON.parse(localStorage.getItem("selectedAd"));
+    if (storedAd) {
+      setAd(storedAd);
+    }
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAd((prevAd) => ({ ...prevAd, [name]: value }));
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.target);
     try {
-      await apiUpdateAdvert(ad.id, data);
+      const response = await apiUpdateAdvert(ad.id, {
+        name: ad.name,
+        price: ad.price,
+        category: ad.category,
+      });
+
+      console.log("Advert updated successfully:", response.data);
       navigate("/dashboard/ads");
     } catch (error) {
-      console.log(error);
+      console.error("Update Error:", error.response?.data || error.message);
+      alert("Failed to update advert");
     }
   };
 
@@ -44,7 +51,8 @@ const EditAdForm = () => {
         <input
           type="text"
           name="name"
-          defaultValue={ad?.name || ""}
+          value={ad.name}
+          onChange={handleChange}
           className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300"
         />
       </div>
@@ -56,7 +64,8 @@ const EditAdForm = () => {
           <input
             type="text"
             name="price"
-            defaultValue={ad?.price || ""}
+            value={ad.price}
+            onChange={handleChange}
             className="w-full bg-transparent focus:outline-none"
           />
         </div>
@@ -66,7 +75,8 @@ const EditAdForm = () => {
         <label className="block text-gray-700 font-medium">Category</label>
         <select
           name="category"
-          defaultValue={ad?.category || ""}
+          value={ad.category}
+          onChange={handleChange}
           className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300"
         >
           <option value="">Select a category</option>
@@ -76,22 +86,6 @@ const EditAdForm = () => {
             </option>
           ))}
         </select>
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700 font-medium">Image</label>
-        <input
-          type="file"
-          accept="image/*"
-          className="w-full px-4 py-2 border rounded-md cursor-pointer"
-        />
-        {ad?.image && (
-          <img
-            src={ad.image}
-            alt="Preview"
-            className="mt-2 w-32 h-32 object-cover rounded-md shadow-lg"
-          />
-        )}
       </div>
 
       <button

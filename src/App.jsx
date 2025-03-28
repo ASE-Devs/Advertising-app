@@ -15,10 +15,12 @@ import EditAdPage from "./pages/dashboard/EditAdPage";
 import RecycleBin from "./pages/dashboard/RecycleBin";
 import VendorProfile from "./pages/dashboard/VendorProfile";
 import Analysis from "./pages/dashboard/Analysis";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
+    <Toaster position="top-right" reverseOrder={false}/>
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index={true} element={<Landing />} />

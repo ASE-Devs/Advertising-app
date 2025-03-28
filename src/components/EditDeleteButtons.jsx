@@ -1,17 +1,5 @@
 import React from "react";
 import { Pencil, Trash2 } from "lucide-react";
-import { apiDeleteVendorAdvertById } from "../services/adverts";
-
-const handleDelete = async () => {
-  // delete
-  try {
-    const response = await apiDeleteVendorAdvertById(ad.id);
-    console.log(response.data);
-    location.reload;
-  } catch (error) {
-    console.log;
-  }
-};
 
 const EditDeleteButtons = ({ handleEdit, handleDelete }) => {
   return (
