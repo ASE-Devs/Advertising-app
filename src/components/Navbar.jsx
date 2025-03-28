@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <nav>
         <div className="flex justify-between items-center h-16 bg-[#DDEEFE] text-black fixed w-full shadow-sm font-medium z-10">
-          <div className="flex items-center pl-10">logo here</div>
+          <div className="flex items-center pl-10">FamilyBloom</div>
           <div className="px-4 w-1/2 gap-5 flex justify-around items-center ">
             <Link to="/" className="hover:text-[#325799]">
               Home

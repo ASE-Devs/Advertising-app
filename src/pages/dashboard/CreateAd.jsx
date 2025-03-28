@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import { apiAddAdvert } from "../../services/adverts";
 
 const CreateAd = () => {
+  const navigate = useNavigate(); 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -9,12 +12,14 @@ const CreateAd = () => {
     try {
       const response = await apiAddAdvert(formData);
       console.log(response);
+      navigate("/dashboard/ads"); 
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
-    <div className="flex justify-center items-center  bg-gray-100 px-4">
+    <div className="flex justify-center items-center bg-gray-100 px-4">
       <form
         className="w-full max-w-lg bg-white p-6 rounded-2xl shadow-lg"
         onSubmit={handleSubmit}
@@ -23,7 +28,7 @@ const CreateAd = () => {
           Post an Ad
         </h1>
 
-        <div className="space-y-4 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none ">
+        <div className="space-y-4 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
           <select
             name="category"
             required
@@ -62,7 +67,6 @@ const CreateAd = () => {
             type="file"
             name="pictures"
             accept="image/*"
-            alt=""
             required
           />
 

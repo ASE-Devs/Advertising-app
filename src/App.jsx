@@ -15,11 +15,15 @@ import EditAdPage from "./pages/dashboard/EditAdPage";
 import RecycleBin from "./pages/dashboard/RecycleBin";
 import VendorProfile from "./pages/dashboard/VendorProfile";
 import Analysis from "./pages/dashboard/Analysis";
+ edit-feature-final
+import { Toaster } from "react-hot-toast";
 import ContactUs from "./pages/auth/ContactUs";
+ main
 
 function App() {
   return (
     <BrowserRouter>
+    <Toaster position="top-right" reverseOrder={false}/>
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index={true} element={<Landing />} />
