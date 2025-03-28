@@ -25,6 +25,7 @@ const VendorAds = () => {
     const getAds = async () => {
       try {
         const response = await apiGetVendorAdverts();
+        console.log("Fetched Adverts:", response.data.data); // Debugging log
         setAdverts(response.data.data);
       } catch (error) {
         toast.error("Failed to fetch adverts");
@@ -40,30 +41,30 @@ const VendorAds = () => {
       : adverts.filter((ad) => ad.category === selectedCategory);
 
   const handleEdit = (ad) => {
-    localStorage.setItem("selectedAd", JSON.stringify(ad));
+    const formattedAd = { ...ad, id: ad._id || ad.id }; // Ensure correct ID format
+    localStorage.setItem("selectedAd", JSON.stringify(formattedAd));
     navigate("../edit-ad");
   };
 
   const handleDelete = async (id) => {
-    const adToDelete = adverts.find((ad) => ad.id === id);
+    const adToDelete = adverts.find((ad) => ad._id === id || ad.id === id);
     if (adToDelete && window.confirm(`Delete "${adToDelete.name}"?`)) {
       try {
         await apiDeleteVendorAdvertById(id);
-        setAdverts(adverts.filter((ad) => ad.id !== id));
+        setAdverts(adverts.filter((ad) => ad._id !== id && ad.id !== id));
 
         toast.success("Advert moved to Recycle Bin!", {
           style: {
-            background: "#FF9800",
-            color: "#fff",
+            background: "#DDEEFE",
+            color: "#073180",
             borderRadius: "8px",
             fontWeight: "bold",
             padding: "12px",
           },
-          icon: "🗑️",
         });
       } catch (error) {
         toast.error("Failed to delete advert", {
-          style: { background: "#D32F2F", color: "#fff" },
+          style: { background: "#DDEEFE", color: "#073180" },
         });
         console.error("Error deleting advert:", error);
       }
@@ -107,7 +108,7 @@ const VendorAds = () => {
           {filteredAds.length > 0 ? (
             filteredAds.map((ad) => (
               <div
-                key={ad.id}
+                key={ad._id || ad.id}
                 className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center"
               >
                 {ad.pictures && ad.pictures.length > 0 ? (
@@ -130,7 +131,7 @@ const VendorAds = () => {
                   <div className="flex justify-center mt-3">
                     <EditDeleteButtons
                       handleEdit={() => handleEdit(ad)}
-                      handleDelete={() => handleDelete(ad.id)}
+                      handleDelete={() => handleDelete(ad._id || ad.id)}
                     />
                   </div>
                 </div>
