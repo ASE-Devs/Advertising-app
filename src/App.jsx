@@ -15,7 +15,10 @@ import EditAdPage from "./pages/dashboard/EditAdPage";
 import RecycleBin from "./pages/dashboard/RecycleBin";
 import VendorProfile from "./pages/dashboard/VendorProfile";
 import Analysis from "./pages/dashboard/Analysis";
+ edit-feature-final
 import { Toaster } from "react-hot-toast";
+import ContactUs from "./pages/auth/ContactUs";
+ main
 
 function App() {
   return (
@@ -30,6 +33,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="about" element={<About />} />
+        <Route path="/contact" element={<ContactUs/>}/>
 
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index={true} element={<Overview />} />
