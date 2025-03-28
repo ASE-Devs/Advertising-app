@@ -13,9 +13,31 @@ import { FcCustomerSupport } from "react-icons/fc";
 import { MdOutlinePolicy } from "react-icons/md";
 import { Link } from "react-router";
 
-const Landing = () => {
+const UserLanding = () => {
   return (
     <>
+
+<nav>
+        <div className="flex justify-between items-center h-16 bg-[#DDEEFE] text-black fixed w-full shadow-sm font-medium z-10">
+          <div className="flex items-center pl-10">FamilyBloom</div>
+          <div className="px-4 w-1/2 gap-5 flex justify-around items-center ">
+            <Link to="/" className="hover:text-[#325799]">
+              Home
+            </Link>
+            <Link to="/about" className="hover:text-[#325799]">
+              About
+            </Link>
+            <Link to="/adverts" className="hover:text-[#325799]">
+              Shop
+            </Link>
+            <Link to="/contact" className="hover:text-[#325799]">
+              Contact
+            </Link>
+           
+          </div>
+        </div>
+      </nav>
+
       <div className="relative w-full text-white">
        
         <img src={Image8} alt="Studio" className="w-full h-auto object-cover" />
@@ -25,7 +47,6 @@ const Landing = () => {
           <p className="text-2xl text-black mt-5">
             Limited time offer. Don't miss out!
           </p>
-
 
           <Link to={`/signup`}>
             <button className="mt-4 px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-300 transition">
@@ -225,4 +246,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default UserLanding;

@@ -17,6 +17,7 @@ import VendorProfile from "./pages/dashboard/VendorProfile";
 import Analysis from "./pages/dashboard/Analysis";
 import { Toaster } from "react-hot-toast";
 import ContactUs from "./pages/auth/ContactUs";
+import UserLanding from "./pages/user/UserLanding";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/user" element={<UserLanding/>} />
         <Route path="about" element={<About />} />
         <Route path="/contact" element={<ContactUs/>}/>
 

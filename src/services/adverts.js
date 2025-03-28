@@ -21,3 +21,6 @@ export const apiGetDeletedAdverts = async () =>
 
 export const apiRestoreAdvert = async (id) =>
   apiClient.put(`/adverts-restore/${id}`);
+
+
+
